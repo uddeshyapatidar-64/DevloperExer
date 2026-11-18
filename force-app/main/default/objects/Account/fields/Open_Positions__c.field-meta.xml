@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Positions__c</fullName>
+    <description>Roll-up of the openings on this employer&apos;s positions that have a Status of Open.</description>
+    <label>Open Positions</label>
+    <summarizedField>Position__c.Openings__c</summarizedField>
+    <summaryFilterItems>
+        <field>Position__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Position__c.Employer__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

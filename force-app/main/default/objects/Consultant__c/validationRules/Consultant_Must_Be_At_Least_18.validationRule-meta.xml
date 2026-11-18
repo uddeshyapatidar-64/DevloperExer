@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consultant_Must_Be_At_Least_18</fullName>
+    <active>true</active>
+    <description>A consultant must be at least 18 years old.</description>
+    <errorConditionFormula>AND(
+   NOT(ISBLANK(DOB__c)),
+   Age__c &lt; 18
+)</errorConditionFormula>
+    <errorDisplayField>DOB__c</errorDisplayField>
+    <errorMessage>Consultant must be at least 18 years old.</errorMessage>
+</ValidationRule>

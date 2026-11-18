@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Position_Must_Belong_To_Same_Employer</fullName>
+    <active>true</active>
+    <description>If a position is supplied, it must belong to the same employer as the hiring.</description>
+    <errorConditionFormula>AND(
+   NOT(ISBLANK(Position__c)),
+   Position__r.Employer__c &lt;&gt; Employer__c
+)</errorConditionFormula>
+    <errorDisplayField>Position__c</errorDisplayField>
+    <errorMessage>The selected Position must belong to the same Employer.</errorMessage>
+</ValidationRule>
