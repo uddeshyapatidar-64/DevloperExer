@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HR_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The HR contact for this employer. A validation rule ensures the contact belongs to this account.</description>
+    <label>HR Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Employers as HR Contact</relationshipLabel>
+    <relationshipName>EmployersAsHRContact</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>
