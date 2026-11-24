@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Of_Birth_Cannot_Be_In_Future</fullName>
+    <active>true</active>
+    <description>Date of Birth must be today or earlier.</description>
+    <errorConditionFormula>DOB__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>DOB__c</errorDisplayField>
+    <errorMessage>Date of Birth cannot be in the future.</errorMessage>
+</ValidationRule>

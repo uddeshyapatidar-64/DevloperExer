@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Married__c</fullName>
+    <description>Helper formula used by the Consultant record page to show the Married field only when the consultant is 21 or older.</description>
+    <formula>IF(Age__c &gt;= 21, 'Yes', 'No')</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Show Married</label>
+    <type>Text</type>
+</CustomField>

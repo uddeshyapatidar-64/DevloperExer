@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HR_Contact_Must_Belong_To_Account</fullName>
+    <active>true</active>
+    <description>Only a contact that belongs to this account can be selected as its HR Contact.</description>
+    <errorConditionFormula>AND(
+   NOT(ISBLANK(HR_Contact__c)),
+   HR_Contact__r.AccountId &lt;&gt; Id
+)</errorConditionFormula>
+    <errorDisplayField>HR_Contact__c</errorDisplayField>
+    <errorMessage>HR Contact must be a contact of this Account.</errorMessage>
+</ValidationRule>
