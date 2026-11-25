@@ -61,7 +61,7 @@ public class exe_2_1 {
             Consultant__c(Id, First_Name__c WHERE Gender__c = :gender),
             Contact(Id, Name WHERE GenderIdentity = :gender)
             WITH USER_MODE
-        ];
+];
         return results;
     }
 
