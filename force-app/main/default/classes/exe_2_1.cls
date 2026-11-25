@@ -1,5 +1,5 @@
 /**
- * @author Your Name
+ * @author: Uddeshya Patidar
  * @date 2026-11-25
  * @group General
  * @description Provides SOSL-based search functionality for Consultants,
