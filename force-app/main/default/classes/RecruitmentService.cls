@@ -14,6 +14,7 @@
  * @see Consultant__c
  */
 public with sharing class RecruitmentService {
+    public static Map<String, List<String>> objCache;
 
     /**
      * @description Custom exception used for invalid inputs in recruitment services.
@@ -38,8 +39,12 @@ public with sharing class RecruitmentService {
      */
     public static List<String> getConsultantNames(Id employerId) {
 
-        if (employerId == null) {
-            throw new RecruitmentServiceException('Employer Id cannot be null.');
+        if (employerId == null ||
+            employerId.getSObjectType() != Account.SObjectType) {
+
+            throw new RecruitmentServiceException(
+                'Invalid Employer Id. Expected an Account ID.'
+            );
         }
         
         List<String> consultantNames = new List<String>();
@@ -247,7 +252,11 @@ public with sharing class RecruitmentService {
      *
      * @see Schema
      */
-    public static List<List<String>> listOrgObjects() {
+    public static Map<String, List<String>> listOrgObjects() {
+
+        if (objCache != null) {
+            return objCache;
+        }
 
         List<String> standardObjects = new List<String>();
         List<String> customObjects = new List<String>();
@@ -267,9 +276,11 @@ public with sharing class RecruitmentService {
         standardObjects.sort();
         customObjects.sort();
 
-        return new List<List<String>>{
-            standardObjects,
-            customObjects
+        objCache = new Map<String, List<String>>{
+            'Standard Obj' => standardObjects,
+            'Custom Obj'   => customObjects
         };
+
+        return objCache;
     }
 }
