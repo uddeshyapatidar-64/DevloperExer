@@ -3,13 +3,21 @@
     <fullName>Position__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Optional position. If supplied, it must belong to the same employer as the hiring.</description>
-    <externalId>false</externalId>
     <label>Position</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Please select a position belonging to the selected employeer</errorMessage>
+        <filterItems>
+            <field>Position__c.Employer__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Employer__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Position__c</referenceTo>
     <relationshipLabel>Hirings</relationshipLabel>
     <relationshipName>Hirings</relationshipName>
     <required>false</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>
