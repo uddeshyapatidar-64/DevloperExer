@@ -1,0 +1,5 @@
+Your Work Statement has been rejected by the assigned manager.
+
+Work Statement: {!Work_Statement__c.Name}
+Amount: {!Work_Statement__c.Amount__c}
+Approval Status: {!Work_Statement__c.Approval_Status__c}

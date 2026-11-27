@@ -4,6 +4,16 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <description>The HR contact for this employer. A validation rule ensures the contact belongs to this account.</description>
     <label>HR Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Only this account&apos;s contacts can be picked.</errorMessage>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Id</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Employers as HR Contact</relationshipLabel>
     <relationshipName>EmployersAsHRContact</relationshipName>
