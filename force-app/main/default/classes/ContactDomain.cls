@@ -70,8 +70,7 @@ public without sharing class ContactDomain {
             else if (incomingPrimaryContacts.size() > 1) {
                 for (Contact con : incomingPrimaryContacts) {
                     con.addError(
-                        'Multiple primary Contacts were selected for ' +
-                        'the same Account. Only one is allowed.'
+                        'Multiple primary Contacts were selected for the same Account. Only one is allowed.'
                     );
                 }
             }
